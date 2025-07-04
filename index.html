@@ -1,43 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR"> <head>
-    <meta charset="UTF-8"> <title>Gerenciador de Doações de Roupas</title> <link rel="stylesheet" href="style.css"> </head>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficinas Culturais - Inscrição</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
+
     <div class="container">
+        <header>
+            <h1>Gerenciador de Inscrições para Oficinas Culturais</h1>
+            <p>Promovendo arte e cultura para a comunidade.</p>
+        </header>
 
-        <h1>Gerenciador de Doações de Roupas</h1>
+        <form id="formInscricao">
+            <input type="hidden" id="editIndex">
 
-        <form id="formDoacao">
-            <input type="text" id="nome" placeholder="Nome do Doador" required>
+            <div class="form-group">
+                <label for="nome">Nome Completo do Participante:</label>
+                <input type="text" id="nome" placeholder="Digite o nome completo" required>
+            </div>
 
-            <select id="tipo">
-                <option value="Camiseta">Camiseta</option>
-                <option value="Calça">Calça</option>
-                <option value="Agasalho">Agasalho</option>
-                <option value="Calçado">Calçado</option>
-            </select>
+            <div class="form-group">
+                <label for="idade">Idade:</label>
+                <input type="number" id="idade" placeholder="Ex: 15" min="8" required>
+            </div>
 
-            <input type="number" id="quantidade" placeholder="Quantidade" min="1" required>
 
-            <label>
-                <input type="checkbox" id="infantil"> É peça infantil?
-            </label>
+        
+            <div class="form-group">
+                <label for="oficina">Oficina Escolhida:</label>
+                <select id="oficina" required>
+                    <option value="">Selecione uma oficina</option>
+                    <option value="Teatro">Teatro</option>
+                    <option value="Dança">Dança</option>
+                    <option value="Desenho">Desenho</option>
+                    <option value="Música">Música</option>
+                </select>
+            </div>
 
-            <button type="submit">Registrar Doação</button>
+            <div class="form-group-checkbox">
+                <input type="checkbox" id="participouAntes">
+                <label for="participouAntes">Já participou de edições anteriores?</label>
+            </div>
+
+            <button type="submit">Registrar Inscrição</button>
         </form>
+        
+        <div id="feedback" class="feedback-message" hidden></div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Doador</th>
-                    <th>Tipo</th>
-                    <th>Qtde</th>
-                    <th>Infantil</th>
-                    <th>Impacto</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody id="tabelaDoacoes"></tbody>
-        </table>
+        <hr>
+
+        <h2>Inscrições Realizadas</h2>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Participante</th>
+                        <th>Oficina</th>
+                        <th>Idade</th>
+                        <th>Participou Antes</th>
+                        <th>Prioridade</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="tabelaInscricoes">
+                    </tbody>
+            </table>
+        </div>
     </div>
 
     <script src="script.js"></script>
