@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Doações de Roupas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciador de Doações de Roupas</h1>
+        <form id="formDoacao">
+            <input type="text" id="nome" placeholder="Nome do Doador" required>
+            <select id="tipo">
+                <option value="Camiseta">Camiseta</option>
+                <option value="Calça">Calça</option>
+                <option value="Agasalho">Agasalho</option>
+                <option value="Calçado">Calçado</option>
+            </select>
+            <input type="number" id="quantidade" placeholder="Quantidade" min="1" required>
+            <label>
+                <input type="checkbox" id="infantil"> É peça infantil?
+            </label>
+            <button type="submit">Registrar Doação</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Doador</th>
+                    <th>Tipo</th>
+                    <th>Qtde</th>
+                    <th>Infantil</th>
+                    <th>Impacto</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="tabelaDoacoes"></tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
